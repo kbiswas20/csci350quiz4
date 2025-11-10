@@ -67,7 +67,7 @@ def is_valid(board, row, col, num):
     for i in range(9):
         if board[i][col] == num:
             return False
-        
+
     # TODO: Check if num is in the same 3x3 box
     box_row_start = (row // 3) * 3
     box_col_start = (col // 3) * 3
@@ -115,12 +115,12 @@ def solve_sudoku(board):
             board[empty[0]][empty[1]] = num
             if solve_sudoku(board):
                 return True
-            board[empty[0]][empty[1]] = 0  # Undo placement (backtrack)
+            board[empty[0]][empty[1]] = 0 # undoing placement (backtrack)
 
     # TODO: If we tried all numbers and none worked, return False
     return False
     
-    pass  # Remove this when you implement the function
+    # pass  # Remove this when you implement the function
 
 # Test cases
 if __name__ == "__main__":
